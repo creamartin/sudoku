@@ -1,7 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { correct, improveSolution } from './solver.js'
 
+function Stepper(props){
+  return(
+  <button className="step" onClick={props.onClick}>Step
+  </button>)
+}
+
+function Solver(props){
+  return(
+  <button className="solve" onClick={props.onClick}>Solve
+  </button>)
+}
 
 function Square(props) {
     if (props.value.constructor === Number) {
@@ -65,101 +77,31 @@ class Sudoku extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            squares: [
-                [
-                    3, 4
-                ],
-                1,
-                7,
-                6,
-                0,
-                0,
-                0,
-                3,
-                4,
-                2,
-                8,
-                9,
-                0,
-                0,
-                4,
-                0,
-                0,
-                0,
-                3,
-                4,
-                6,
-                2,
-                0,
-                5,
-                0,
-                9,
-                0,
-                6,
-                0,
-                2,
-                0,
-                0,
-                0,
-                0,
-                1,
-                0,
-                0,
-                3,
-                8,
-                0,
-                0,
-                6,
-                0,
-                4,
-                7,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                9,
-                0,
-                0,
-                0,
-                0,
-                0,
-                7,
-                8,
-                7,
-                0,
-                3,
-                4,
-                0,
-                0,
-                5,
-                6,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-            ]
+            squares: correct,
+            initialized:false
         }
     };
+    
+    step = ()=>{
+      const old = this.state.squares;
+      const improved = improveSolution(old);
+      this.setState({squares: improved});
+
+    };
+
+    initialize=()=>{
+      this.setState({squares: this.state.squares.map(el => el ? el : [...Array(10).keys()].splice(1)) ,initialized:true});
+    }
 
     render() {
+        const navigation = this.state.initialized?<Stepper onClick={this.step}/>:<Solver onClick={this.initialize}/>
         return (<div className="game">
             <div className="game-board">
                 <Board squares={
                     this.state.squares
                 }/>
             </div>
+            {navigation}
         </div>);
     }
 }
