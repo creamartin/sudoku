@@ -1,91 +1,62 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+	background: #33405f;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.game {
+    box-sizing: content-box;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5)
+}
+.game-board{
+  border-collapse: collapse;
+  background: #FFF;
+}
+.container{
+  padding: 0px;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+}
+.container:nth-child(3n+4){
+  border-left: medium solid black;
+}
+.board-row:nth-child(3n+4) .container{
+  border-top: medium solid black;
+}
+.container:nth-child(3n){
+  border-right: 0px;
+}
+.board-row:nth-child(3n) .container{
+  border-bottom: 0px;
 }
 
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 20px;
-  font-weight: bolder;
-  line-height: 34px;
+.square ,.multi_square{
   height: 60px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
   width: 60px;
+  padding: 2px;
 }
 
-.multi_square{
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
+span {
   font-size: 20px;
-  font-weight: bold;
-  line-height: 20px;
-  height: 60px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
   text-align: center;
-  width: 60px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .possible,.impossible{
-  float: left;
-  font-size: 10px;
-  height: 20px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 20px;
+  position: relative;
+  width: 33.33%;
+  height: 33.33%;
+  font-size: small;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .impossible{
   visibility: hidden;
 }
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-
-.game {
-  display: flex;
-  flex-direction: row;
-}
-
-.game-info {
-  margin-left: 10px;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.game-toggle label {
-    display: flex;
-    width: 150px;
-    justify-content: space-between;
-    align-items: center;
-}
-
