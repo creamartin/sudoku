@@ -1,0 +1,63 @@
+.dropdown-wrapper{
+    position: relative;
+}
+.dialog-wrapper{
+    min-width: 150px;
+    max-width: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    border-radius: 10px;
+    box-shadow:0 5px 20px 0 rgba(0,0,0,.2);
+}
+.dialog-option{
+    width: 100%;
+    font-weight: bolder;
+    color: #4a90e2;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.dialog-option:hover{
+    background:#3567a141;
+}
+.dialog-cancel{
+    color: #e24a4a;
+}
+
+.dialog-info{
+    padding: 5px;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.tooltip-arrow {
+    bottom: 100%;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+/*geklaut*/
+.tooltip-arrow:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+    border-top-left-radius: 8px;}

@@ -1,4 +1,5 @@
-const correct = [
+const solved = [ 5,1,7,6,9,8,2,3,4,2,8,9,1,3,4,7,5,6,3,4,6,2,7,5,8,9,1,6,7,2,8,4,9,3,1,5,1,3,8,5,2,6,9,4,7,9,5,4,7,1,3,6,8,2,4,9,5,3,6,2,1,7,8,7,2,3,4,8,1,5,6,9,8,6,1,9,5,7,4,2,3 ];
+const start = [
        5, 1, 7, 6, 0, 0, 0, 3, 4 ,
        2, 8, 9, 0, 0, 4, 0, 0, 0 ,
        3, 4, 6, 2, 0, 5, 0, 9, 0 ,
@@ -9,6 +10,7 @@ const correct = [
        7, 0, 3, 4, 0, 0, 5, 6, 0 ,
        0, 0, 0, 0, 0, 0, 0, 0, 0 ,
   ];
+
 /*
 const correct  = [
      8, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -22,7 +24,8 @@ const correct  = [
      0, 9, 0, 0, 0, 0, 4, 0, 0 ,
 ];*/
 
-function solve9x9(sudoku) {
+
+/*function solve9x9(sudoku) {
 let iteration = 0;
 // fill null with Range(1,9)
 sudoku = sudoku.map(el => el ? el : [...Array(10).keys()].splice(1));
@@ -51,7 +54,7 @@ function improveSolution(sudoku) {
         let numbers = [],
             arrayIndices = [];
         indices.forEach(index => {
-            if (sudoku[index].constructor == Number){
+            if (sudoku[index].constructor === Number){
                 numbers.push(sudoku[index]);}
              else{
                 arrayIndices.push(index);}
@@ -65,7 +68,7 @@ function improveSolution(sudoku) {
                     arrayIndices = arrayIndices.filter(index=> index !== arrayIndex);
                 }
                 else if (newGuess.length <= 0){ 
-                    throw "Error at index " + arrayIndex;}
+                    throw new Error("Error at index " + arrayIndex);}
                 
                 sudoku[arrayIndex] = newGuess;
             }
@@ -113,10 +116,9 @@ function improveSolution(sudoku) {
 
     return sudoku;
 }
-
+*/
 export {
-    solve9x9 as solve9x9,
-    improveSolution as improveSolution,
-    correct as correct
+    solved,
+    start
 };
 

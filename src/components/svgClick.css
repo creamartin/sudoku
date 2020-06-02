@@ -1,0 +1,17 @@
+.svg-click{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height:100%;
+    font-weight: lighter;
+    fill: #2e363f;
+}
+
+.w{
+    font-size: 0.5em;
+    }
+    
+.svg-click:hover{
+    background-color:#3567a141;
+}
