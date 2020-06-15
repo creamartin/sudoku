@@ -1,6 +1,6 @@
 import React from 'react';
 import './numpad.css';
-import {SvgClick} from './SvgClick.js';
+import {SvgClick} from './svgClick.js';
 function Numpad (props){
     let cells =[];
     for(let i=0;i<9;i++){
