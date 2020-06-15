@@ -18,8 +18,9 @@ export default function Dropdown(props) {
         }
     });
 
-    const btn = active?<button className={props.className} onClick={toggle}>{props.text}</button>:
-        <button className={props.className} onClick={toggle}>{props.text}</button>;
+    const btn = <div className={props.className} onClick={toggle}>  <svg xmlns="http://www.w3.org/2000/svg" height="30px" width="100%" viewBox="0 0 30 30">
+    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">{props.text}</text>
+</svg></div>;
     const dialog = active? <DropdownDialog cancel={props.cancel} tooltip={props.tooltip} info={props.info} options={props.options} toggle={toggle}/>:[];
     
     return (<div className="dropdown-wrapper">

@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.css'; 
-import Dropdown from './dropdown.js';
+import Dropdown from './Dropdown.js';
 
 export default function Header(props){
     return(<div className="header-wrapper"><div className="header">

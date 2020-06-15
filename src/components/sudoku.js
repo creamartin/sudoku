@@ -1,22 +1,22 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import Board from './gameBoard.js';
-import Numpad from './numpad.js';
-import {SvgImageClick as Control} from './svgClick.js';
-import Dropdown from './dropdown.js';
+import Board from './GameBoard.js';
+import Numpad from './Numpad.js';
+import {SvgImageClick as Control} from './SvgClick.js';
+import Dropdown from './Dropdown.js';
 import './control.css';
 import './sudoku.css';
-import Header from "./header.js";
-import TopMenu from './topMenu.js';
+import Header from "./Header.js";
+import TopMenu from './TopMenu.js';
 import events from './events.js';
 
 function Sudoku(props) {
     const [history, setHistory] = useState([{
-            squares: Object.assign({}, props.start),
+            squares: Object.assign({}, props.sudoku.start),
             notes: new Array(81).fill([])
         }]);
     const [selected, setSelected] = useState(-1);
     const [notesOn, setNotesOn] = useState(false);
-    const [restart, setRestart] = useState(false);
+    const [mistakes, setMistakes] = useState(false);
 
 
     const setSquares = useCallback(input => {
@@ -65,14 +65,12 @@ function Sudoku(props) {
             if (!selected) 
                 return;
             
-
-            setSquares(props.solved[selected]);
-        }, [props.solved, selected, setSquares]) 
+            setSquares(props.sudoku.solved[selected]);
+        }, [props.sudoku.solved, selected, setSquares]) 
 
             const handleRestart = useCallback(() => {
-                setRestart(!restart);
                 setHistory([history[0]]);
-            }, [restart, history]);
+            }, [history]);
         
         const handleErase = useCallback(() => {
             if (!selected) 
@@ -99,6 +97,9 @@ function Sudoku(props) {
         const handleToggleNotes = useCallback(() => {
             setNotesOn(!notesOn);
         }, [notesOn]);
+        const handleToggleMistakes = useCallback(() =>{
+            setMistakes(!mistakes);
+        },[mistakes])
         const handleNumericInput = useCallback(input => {
             (notesOn) ? setNotes(input) : setSquares(input);
         }, [notesOn, setNotes, setSquares]);
@@ -119,7 +120,7 @@ function Sudoku(props) {
                     handleErase,
                     handleHint,
                     handleUndo,
-                    handleToggleNotes
+                    setNotes
                 });
              else 
                 events.unsubscribe();
@@ -131,22 +132,24 @@ function Sudoku(props) {
             handleErase,
             handleHint,
             handleUndo,
-            handleToggleNotes
+            setNotes
         ]);
 
         return (<div>
             <Header/>
-            <TopMenu onPause={handlePause}
-                restart={restart}
+            <TopMenu difficulty={props.sudoku.difficulty} onPause={handlePause} onToggle={handleToggleMistakes}
+                restart={props.restart}
                 onContinue={handleUndo}/>
             <div className="game">
                 <Board squares={
                         history[history.length - 1].squares
                     }
+                    solved={props.sudoku.solved}
                     notes={
                         history[history.length - 1].notes
                     }
                     selected={selected}
+                    mistakes={mistakes}
                     onClick={
                         id => {
                             setSelected(id)
