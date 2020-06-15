@@ -1,6 +1,6 @@
 import React from 'react';
 import './gameBoard.css';
-import {SvgClick} from './SvgClick.js';
+import {SvgClick} from './svgClick.js';
 
 function isPartOfGroup(self, selected) {
     if (selected < 1) 
