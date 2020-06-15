@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Sudoku from './components/sudoku';
+import Sudoku from './components/sudoku.js';
 import * as serviceWorker from './serviceWorker';
 import {solved,start} from './logic/solver.js'
 
