@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import Board from './GameBoard.js';
-import Numpad from './Numpad.js';
+import Board from './gameBoard.js';
+import Numpad from './numpad.js';
 import {SvgImageClick as Control} from './SvgClick.js';
-import Dropdown from './Dropdown.js';
+import Dropdown from './dropdown.js';
 import './control.css';
 import './sudoku.css';
-import Header from "./Header.js";
-import TopMenu from './TopMenu.js';
+import Header from "./header.js";
+import TopMenu from './topMenu.js';
 import events from './events.js';
 
 function Sudoku(props) {
