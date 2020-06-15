@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import Board from './gameBoard.js';
 import Numpad from './numpad.js';
-import {SvgImageClick as Control} from './SvgClick.js';
+import {SvgImageClick as Control} from './svgClick.js';
 import Dropdown from './dropdown.js';
 import './control.css';
 import './sudoku.css';
