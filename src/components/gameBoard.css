@@ -74,6 +74,10 @@ td{
 .group{
   background: #3448601c
 }
+.mistake > div > svg {
+  fill: #ff3434;
+  background: rgb(221, 178, 184);
+}
 .multisquare{
   padding: 1px;
   font-weight: lighter;

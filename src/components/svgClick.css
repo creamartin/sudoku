@@ -15,3 +15,6 @@
 .svg-click:hover{
     background-color:#3567a141;
 }
+svg{font-size: 1em;
+    min-width: 30px;
+}
