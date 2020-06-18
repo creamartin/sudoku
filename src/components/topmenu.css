@@ -1,22 +1,31 @@
 .topmenu_wrapper{
-    width: 100%;
-    height: 32px;
+    max-height: 32px;
     display: flex;
-    justify-content: center;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
 }
 .topmenu{
+    position: relative;
     max-width: 860px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+.topmenu.ontop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 400px;
+    background: blue;
 }
 .timer-wrapper{
     width: 140px;
     display: inline-flex;
     justify-content: space-between;
 }
-
 .info-span{
     line-height: 32px;
     height: 32px;
@@ -63,3 +72,9 @@ display: flex;}
   }
   
   svg{font-size: 1em;}
+
+  @media (max-width: 766px) and (orientation: portrait) { 
+    .topmenu{
+        max-width: 500px;
+    }
+}

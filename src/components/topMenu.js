@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useCallback} from "react";
 import './topmenu.css';
+import Menu from './menu.js';
 import Dropdown from './dropdown.js';
 function Timer(props) {
     const [count, setCount] = useState(0);
@@ -99,9 +100,9 @@ function ToggleSwitch(props) {
 }
 export default function TopMenu(props) {
     return (<div className="topmenu_wrapper">
-        <div className="topmenu"><Difficulty difficulty={
-                props.difficulty
-            }/><ToggleSwitch onClick={props.onToggle}/><Timer restart={
+        <div className="topmenu">
+        <Menu/>
+        <Timer restart={
                     props.restart
                 }
                 onPause={
@@ -112,3 +113,6 @@ export default function TopMenu(props) {
                 }/></div>
     </div>);
 }
+/*
+        <Difficulty difficulty={props.difficulty}/>
+        <ToggleSwitch onClick={props.onToggle}/>*/

@@ -4,7 +4,6 @@ import './index.css';
 import Sudoku from './components/sudoku.js';
 import * as serviceWorker from './serviceWorker';
 import {solved, start} from './logic/solver.js'
-
 function Game(props) {
     const [restart, setRestart] = useState(false);
     return (<Sudoku sudoku={
