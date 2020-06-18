@@ -1,6 +1,31 @@
 .game{ 
+    position: absolute;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    max-width: 860px;
+    margin: auto;
+    background: white;
 }
+
+.front{
+    position: relative;
+    height: 500px;
+    max-width: 860px;
+    perspective: 1500px;
+    background: lightblue;
+}
+.rotation-wrapper {
+     transition: transform 1s ease-in;
+     width:200%;
+     height:100%;
+     position: absolute;
+     top:0;
+     right:0;
+     z-index:2;
+   }
+.rotated{
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);}

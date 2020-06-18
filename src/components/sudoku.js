@@ -140,7 +140,10 @@ function Sudoku(props) {
             <TopMenu difficulty={props.sudoku.difficulty} onPause={handlePause} onToggle={handleToggleMistakes}
                 restart={props.restart}
                 onContinue={handleUndo}/>
-            <div className="game">
+            <div className="front">
+            <div className="rotation-wrapper">
+                <div className="game">
+                    
                 <Board squares={
                         history[history.length - 1].squares
                     }
@@ -185,6 +188,8 @@ function Sudoku(props) {
                             onClick={handleHint}><Control value="Hint" imagepath="./images/hint.svg"/></div>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
         </div>);
     };
