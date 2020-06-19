@@ -15,7 +15,7 @@ const handleKeyDown = e => {
         }
         switch (key) {
 
-            case 'K': callbacks.handleHint();
+            case 'H': callbacks.handleHint();
                 break;
             case 'K': callbacks.handleErase();
                 break;
