@@ -30,6 +30,8 @@
     transform-style: preserve-3d;
     transform: rotateY(55deg);}
 .options {
+    font-size: large;
+    transform: translateZ(-600px);
     width: 40%;
     height: 100%;
     right: 10px;
