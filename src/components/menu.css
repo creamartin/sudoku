@@ -1,44 +1,47 @@
+:root {
+  --size: 30px;
+  --duration: 0.3s;
+}
+
 .animated-menu {
-    --size: 30px;
-    --duration:0.3s;
-    width: var(--size);
-    height: var(--size);
-    position: relative;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
 }
 .menu-item {
-    display: block;
-    width: 90%;
-    height: 90%;
-    left:5%;
-    top: 5%;
-    position: absolute;
-    transition: transform var(--duration) ease-in;
+  display: block;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  position: absolute;
+  transition: transform var(--duration) ease-in;
 }
 .menu-item.active {
-    transform: none;
-    transition: transform var(--duration) ease-out calc(var(--duration)*0.7);
+  transform: none;
+  transition: transform var(--duration) ease-out calc(var(--duration) * 0.7);
 }
 .top-wrapper.active {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .bottom-wrapper.active {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .stick {
-    width: 100%;
-    height: 10%;
-    top: 45%;
-    position: absolute;
-    background: #4a90e2;
-    transition: transform var(--duration) ease-in calc(var(--duration)*0.7);
+  width: 100%;
+  height: 10%;
+  top: 45%;
+  position: absolute;
+  background: #4a90e2;
+  transition: transform var(--duration) ease-in calc(var(--duration) * 0.7);
 }
 .stick.top {
-    transform: translateY(calc(var(--size)*-0.2));
+  transform: translateY(calc(var(--size) * -0.2));
 }
 .stick.bottom {
-    transform: translateY(calc(var(--size)*0.2));
+  transform: translateY(calc(var(--size) * 0.2));
 }
 .stick.active {
-    transition: transform var(--duration) ease-out;
-    transform: none;    
+  transition: transform var(--duration) ease-out;
+  transform: none;
 }
