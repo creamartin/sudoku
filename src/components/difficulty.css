@@ -1,0 +1,19 @@
+.info-span{
+    line-height: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.difficulty{
+    width: 50px;
+    background: none;
+}
+.difficulty > svg{
+    text-align: start;
+    background: #4a90e2;
+    fill: white;
+    border-radius: 2px;
+}
+.level-wrapper{
+    max-width: 50%;
+}

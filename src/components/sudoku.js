@@ -8,6 +8,8 @@ import './sudoku.css';
 import Header from "./header.js";
 import TopMenu from './topMenu.js';
 import events from './events.js';
+import ToggleSwitch from './toggleSwitch.js';
+import Difficulty from './difficulty.js';
 
 function Sudoku(props) {
     const [history, setHistory] = useState([{
@@ -81,8 +83,6 @@ function Sudoku(props) {
                 if (selected === -1 || history[0].squares[selected] !== 0) 
                     return;
                 
-
-                console.log("notes");
                 const latest = Object.assign({}, history[history.length - 1]);
                 let newEntry = Object.assign({}, latest);
                 newEntry.notes = Object.assign({}, latest.notes);
@@ -137,58 +137,55 @@ function Sudoku(props) {
 
         return (<div>
             <Header/>
-            <TopMenu difficulty={props.sudoku.difficulty} onPause={handlePause} onToggle={handleToggleMistakes}
+            <TopMenu 
+                difficulty={props.sudoku.difficulty}
+                onPause={handlePause}
+                onToggle={handleToggleMistakes}
                 restart={props.restart}
                 onContinue={handleUndo}/>
-            <div className="front">
+            <div className="game-wrapper">
             <div className="rotation-wrapper">
                 <div className="game">
-                    
-                <Board squares={
-                        history[history.length - 1].squares
-                    }
+                <div className="centerBoard"><Board 
+                    squares={history[history.length - 1].squares}
                     solved={props.sudoku.solved}
-                    notes={
-                        history[history.length - 1].notes
-                    }
+                    notes={history[history.length - 1].notes}
                     selected={selected}
                     mistakes={mistakes}
-                    onClick={
-                        id => {
-                            setSelected(id)
-                        }
-                    }/>
+                    onClick={id => setSelected(id)}/></div>
                 <div className="input">
-                    <Dropdown text="New game" className="restart-button" info="The current game state will be lost!" cancel="true" tooltip="true"
-                        options={
-                            [
-                                {
-                                    option: "Restart",
-                                    onClick: handleRestart
-                                },
-                                // todo
-                                {
-                                    option: "New game",
-                                    onClick: () => alert("new Game")
-                                }
-                            ]
-                    }></Dropdown>
+                    <Dropdown 
+                        text="New game"
+                        className="restart-button" 
+                        info="The current game state will be lost!"
+                        cancel="true"
+                        tooltip="true"
+                        options={[
+                            {option: "Restart",onClick: handleRestart}, // todo
+                            {option: "New game",onClick: () => alert("new Game")}]}/>
                     <Numpad onClick={handleNumericInput}/>
                     <div className="controls">
-                        <div className="control"
-                            onClick={handleUndo}><Control value="Undo" imagepath="./images/undo.svg"/></div>
-                        <div className="control"
-                            onClick={handleErase}><Control value="Erase" imagepath="./images/erase.svg"/></div>
-                        <div className="control"
-                            onClick={handleToggleNotes}><Control value="Notes"
-                                imagepath={
-                                    notesOn ? "./images/notes-on.svg" : "./images/notes-off.svg"
-                                }/></div>
-                        <div className="control"
-                            onClick={handleHint}><Control value="Hint" imagepath="./images/hint.svg"/></div>
+                        <div className="control" onClick={handleUndo}>
+                            <Control value="Undo" imagepath="./images/undo.svg"/></div>
+                        <div className="control" onClick={handleErase}>
+                            <Control value="Erase" imagepath="./images/erase.svg"/></div>
+                        <div className="control" onClick={handleToggleNotes}>
+                            <Control value="Notes" imagepath={notesOn ? "./images/notes-on.svg" : "./images/notes-off.svg"}/></div>
+                        <div className="control" onClick={handleHint}>
+                            <Control value="Hint" imagepath="./images/hint.svg"/></div>
                     </div>
                 </div>
             </div>
+            </div>
+            <div className="options">
+                <h3>Options</h3>
+                <br/>
+                <Difficulty difficulty={props.sudoku.difficulty}/>
+                <br/>
+                <ToggleSwitch text="Check for Mistakes" onClick={handleToggleMistakes}/>
+                <br/>
+                <br/>
+                <ToggleSwitch text="Darkmode" onClick={()=>alert("todo")}/>
             </div>
             </div>
         </div>);

@@ -83,6 +83,7 @@ td{
   font-weight: lighter;
   position: absolute;
   top:0;
+  bottom: 0;
   left: 0;
 }
 .possible,.impossible{
@@ -90,9 +91,8 @@ td{
   width: 33.33%;
   height: 33.33%;
   font-size: small;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+float: left;
+text-align: center;
 }
 .impossible{
   visibility: hidden;

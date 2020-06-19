@@ -21,55 +21,11 @@
     height: 400px;
     background: blue;
 }
-.timer-wrapper{
-    width: 140px;
-    display: inline-flex;
-    justify-content: space-between;
-}
 .info-span{
     line-height: 32px;
     height: 32px;
     display: flex;
 }
-.difficulty{
-    width: 50px;
-    background: none;
-    border: none;
-}
-.difficulty > svg{
-    text-align: start;
-}
-.level-wrapper{
-    max-width: 50%;
-}
-.toggle-wrapper{
-display: flex;}
-.toggle input {
-    position: absolute;
-    opacity: 0;
-  }
-  .toggle {
-    margin: auto;
-    display: inline-block;
-    font-size: 20px; /* 1 */
-    height: 1em;
-    width: 2em;
-    background: lightgrey;
-    border-radius: 1em;
-  }
-  
-  .toggle div {
-    height: 1em;
-    width: 1em;
-    border-radius: 1em;
-    background: #FFF;
-    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
-    transition: all 300ms;
-  }
-  .toggle input:checked + div {
-    background:#4a90e2;
-    transform: translate3d(100%, 0, 0);
-  }
   
   svg{font-size: 1em;}
 

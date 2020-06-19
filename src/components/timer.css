@@ -1,0 +1,10 @@
+.timer-wrapper{
+    width: 140px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.info-span{
+    line-height: 32px;
+    height: 32px;
+    display: flex;
+}

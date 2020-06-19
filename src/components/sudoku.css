@@ -4,18 +4,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: 50%;
     max-width: 860px;
     margin: auto;
     background: white;
 }
 
-.front{
+.game-wrapper{
     position: relative;
     height: 500px;
     max-width: 860px;
     perspective: 1500px;
-    background: lightblue;
+    margin: auto;
 }
 .rotation-wrapper {
      transition: transform 1s ease-in;
@@ -26,6 +26,29 @@
      right:0;
      z-index:2;
    }
-.rotated{
+.rotation-wrapper.rotated{
     transform-style: preserve-3d;
-    transform: rotateY(90deg);}
+    transform: rotateY(55deg);}
+.options {
+    width: 40%;
+    height: 100%;
+    right: 10px;
+    top:10px;
+    position: absolute;
+}
+.centerBoard{
+    width: 100%;
+    max-width: 500px;
+}
+
+@media (max-width: 766px) and (orientation: portrait) { 
+    .rotation-wrapper.rotated{
+        transform-style: preserve-3d;
+        transform: rotateY(70deg);}
+    .options{
+        width: 50%;
+    }
+    .game-wrapper{
+        max-width: 500px;
+    }
+}
