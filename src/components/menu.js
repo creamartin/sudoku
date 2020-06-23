@@ -8,8 +8,7 @@ function Menu(props) {
     },[state]);
     
     return (
-        <div className="animated-menu" onClick={()=>{setState(!state)
-            document.getElementsByClassName("timer")[0].dispatchEvent('click');}}>
+        <div className="animated-menu" onClick={()=>{setState(!state)}}>
             <div className={state?"menu-item top-wrapper active":"menu-item top-wrapper"}>
                 <span className={state?"stick top active":"stick top"}></span>
             </div>
