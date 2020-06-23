@@ -3,7 +3,7 @@ import './toggleSwitch.css';
 
 function ToggleSwitch(props) {
     return (<div className="toggle-wrapper">
-  <span>{props.text}</span>
+  <span>Check for Mistakes</span>
     <label className="toggle"><input type="checkbox" onClick={props.onClick}/><div/>
     </label>
     </div>);

@@ -137,12 +137,12 @@ function Sudoku(props) {
 
         return (<div>
             <Header/>
-            <TopMenu 
-                difficulty={props.sudoku.difficulty}
-                onPause={handlePause}
-                onToggle={handleToggleMistakes}
-                restart={props.restart}
-                onContinue={handleUndo}/>
+            <TopMenu
+            difficulty={props.sudoku.difficulty}
+            onPause={handlePause}
+            onToggle={handleToggleMistakes}
+            restart={props.restart}
+            onContinue={handleUndo}/>
             <div className="game-wrapper">
             <div className="rotation-wrapper">
                 <div className="game">
@@ -179,13 +179,16 @@ function Sudoku(props) {
             </div>
             <div className="options">
                 <h3>Options</h3>
-                <br/>
+                <div className="hr"></div>
                 <Difficulty difficulty={props.sudoku.difficulty}/>
                 <br/>
                 <ToggleSwitch text="Check for Mistakes" onClick={handleToggleMistakes}/>
-                <br/>
-                <br/>
+                <div className="hr"></div>
                 <ToggleSwitch text="Darkmode" onClick={()=>alert("todo")}/>
+                <div className="hr"></div>
+                <span>Impressum</span><br/>
+                <br/>
+                <span>Datenschutz</span>
             </div>
             </div>
         </div>);

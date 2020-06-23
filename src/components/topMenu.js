@@ -6,18 +6,14 @@ import Timer from './timer.js';
 export default function TopMenu(props) {
     return (<div className="topmenu_wrapper">
         <div className="topmenu">
-        <Menu onPause={
-                    props.onPause
-                }/>
-        <Timer restart={
-                    props.restart
-                }
-                onPause={
-                    props.onPause
-                }
-                onContinue={
-                    props.onContinue
-                }/></div>
+        <Menu onPause={props.onPause}
+        onContinue={props.onContinue}/>
+        <Timer 
+            restart={props.restart}
+            onPause={props.onPause}
+            onContinue={props.onContinue}/>
+        
+        </div>
     </div>);
 }
 /*

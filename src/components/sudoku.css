@@ -1,3 +1,8 @@
+:root{
+    --font-weight:lighter;
+    --font-family: 'Open Sans', sans-serif;
+    --font-size: large;
+}
 .game{ 
     position: absolute;
     right: 0;
@@ -18,7 +23,7 @@
     margin: auto;
 }
 .rotation-wrapper {
-     transition: transform 1s ease-in;
+     transition: transform 0.3s ease;
      width:200%;
      height:100%;
      position: absolute;
@@ -30,13 +35,22 @@
     transform-style: preserve-3d;
     transform: rotateY(55deg);}
 .options {
-    font-size: large;
-    transform: translateZ(-600px);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
     width: 40%;
-    height: 100%;
+    height: auto;
     right: 10px;
-    top:10px;
+    top: 50px;
+    padding:10px;
     position: absolute;
+}
+.hr{
+    opacity: 0.8;
+    margin-top:15px;
+    margin-bottom:15px;
+    width: 100%;
+    height: 1px;
+    background: black;
 }
 .centerBoard{
     width: 100%;

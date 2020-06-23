@@ -1,14 +1,11 @@
 .topmenu_wrapper{
+    max-width: 860px;
     max-height: 32px;
     display: flex;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    justify-content: center;
+    margin: auto;
 }
 .topmenu{
-    position: relative;
-    max-width: 860px;
     width: 100%;
     display: flex;
     justify-content: space-between;

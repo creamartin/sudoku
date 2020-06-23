@@ -7,7 +7,6 @@ const handleKeyDown = e => {
         return;
     }
     if (e.shiftKey || e.altKey || e.metaKey) {
-        e.preventDefault();
         const key = String.fromCharCode(e.keyCode);
         if(isNumeric.test(key)){
             callbacks.setNotes(key);
