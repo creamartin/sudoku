@@ -55,6 +55,7 @@
         border: none;
     }
     .controls{
+        max-height: 100px;
         border: none;
     }
     .game{

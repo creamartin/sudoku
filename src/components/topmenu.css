@@ -10,14 +10,7 @@
     display: flex;
     justify-content: space-between;
 }
-.topmenu.ontop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 400px;
-    background: blue;
-}
+
 .info-span{
     line-height: 32px;
     height: 32px;

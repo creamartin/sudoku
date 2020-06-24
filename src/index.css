@@ -1,4 +1,7 @@
 body ,html,#root{
 	font-family: 'Open Sans', sans-serif;
 	height: 100%;
+	transition: var(--transition);
+	background: var(--background);
+	color: var(--text-color);
 }

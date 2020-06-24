@@ -5,9 +5,8 @@
     width: 100%;
     height:100%;
     font-weight: lighter;
-    fill: #2e363f;
+    fill: var(--text-color);
 }
-
 .w{
     font-size: 0.5em;
     }
@@ -15,6 +14,22 @@
 .svg-click:hover{
     background-color:#3567a141;
 }
-svg{font-size: 1em;
+.svg-click svg{
+    width: 100%;
+    height: 80%;
+    font-size: 1em;
     min-width: 30px;
+}
+.svg-click span{
+    color:var(--text-color);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    text-align: center;
+    min-width: 30px;
+}
+.svg-click > svg{
+    filter: var(--invert);
 }

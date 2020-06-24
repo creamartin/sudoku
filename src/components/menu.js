@@ -1,19 +1,23 @@
 import React,{useState, useEffect} from 'react';
 import './menu.css'
 function Menu(props) {
-    const[state,setState] = useState(false);
+    const[menuState,setMenuState] = useState(false);
     useEffect(()=>{
-        const wrapper = document.getElementsByClassName("rotation-wrapper")[0];
-        state?wrapper.classList.add("rotated"):wrapper.classList.remove("rotated");
-    },[state]);
+        if(props.active){
+            setMenuState(true);
+        }
+    },[props.active]);
+
+  // useEffect(()=>menuState?props.onStateTrue:props.onStateFalse,[menuState]);
+    useEffect(()=>menuState?props.onStateTrue:props.onStateFalse,[menuState,props.onStateFalse,props.onStateTrue]);
     
     return (
-        <div className="animated-menu" onClick={()=>{setState(!state)}}>
-            <div className={state?"menu-item top-wrapper active":"menu-item top-wrapper"}>
-                <span className={state?"stick top active":"stick top"}></span>
+        <div className="animated-menu" onClick={()=>{setMenuState(!menuState);}}>
+            <div className={menuState?"menu-item top-wrapper active":"menu-item top-wrapper"}>
+                <span className={menuState?"stick top active":"stick top"}></span>
             </div>
-            <div className={state?"menu-item bottom-wrapper active":"menu-item bottom-wrapper"}>
-                <span className={state?"stick bottom active":"stick bottom"}></span>
+            <div className={menuState?"menu-item bottom-wrapper active":"menu-item bottom-wrapper"}>
+                <span className={menuState?"stick bottom active":"stick bottom"}></span>
             </div>
         </div>
     );

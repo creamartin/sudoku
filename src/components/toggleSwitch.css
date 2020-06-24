@@ -10,7 +10,7 @@
         font-size: 20px; /* 1 */
         height: 1em;
         width: 2em;
-        background: lightgrey;
+        background: rgba(211, 211, 211, 0.4);
         border-radius: 1em;
       }
       

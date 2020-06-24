@@ -82,7 +82,7 @@ function Square(props) {
                         isPartOfGroup(i, props.selected)
                     }
                     isMistake={
-                        props.mistakes && props.squares[i] !== 0 && props.squares[i] !== props.solved[i]
+                        props.mistakes && parseInt(props.squares[i]) !== 0 && parseInt(props.squares[i]) !== parseInt(props.solved[i])
                     }
                     isSameAsSelected={
                         isSameAsSelected(i, props.selected, props.squares)

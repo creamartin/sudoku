@@ -8,8 +8,10 @@ import './sudoku.css';
 import Header from "./header.js";
 import TopMenu from './topMenu.js';
 import events from './events.js';
-import ToggleSwitch from './toggleSwitch.js';
-import Difficulty from './difficulty.js';
+import Options from './options.js';
+import InfoScreen from './infoScreen.js';
+import Legal from './legal.js';
+import Privacy from './privacy.js';
 
 function Sudoku(props) {
     const [history, setHistory] = useState([{
@@ -136,6 +138,8 @@ function Sudoku(props) {
         ]);
 
         return (<div>
+            <InfoScreen id="legal" title="Legal Notice"><Legal/></InfoScreen>
+            <InfoScreen id="privacy" title="Privacy Policy"><Privacy/></InfoScreen>
             <Header/>
             <TopMenu
             difficulty={props.sudoku.difficulty}
@@ -146,7 +150,8 @@ function Sudoku(props) {
             <div className="game-wrapper">
             <div className="rotation-wrapper">
                 <div className="game">
-                <div className="centerBoard"><Board 
+                <div className="centerBoard">
+                    <Board 
                     squares={history[history.length - 1].squares}
                     solved={props.sudoku.solved}
                     notes={history[history.length - 1].notes}
@@ -177,19 +182,9 @@ function Sudoku(props) {
                 </div>
             </div>
             </div>
-            <div className="options">
-                <h3>Options</h3>
-                <div className="hr"></div>
-                <Difficulty difficulty={props.sudoku.difficulty}/>
-                <br/>
-                <ToggleSwitch text="Check for Mistakes" onClick={handleToggleMistakes}/>
-                <div className="hr"></div>
-                <ToggleSwitch text="Darkmode" onClick={()=>alert("todo")}/>
-                <div className="hr"></div>
-                <span>Impressum</span><br/>
-                <br/>
-                <span>Datenschutz</span>
-            </div>
+            <Options
+            difficulty={props.sudoku.difficulty}
+            handleToggleMistakes={handleToggleMistakes}/>
             </div>
         </div>);
     };

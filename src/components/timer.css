@@ -13,4 +13,5 @@
 }
 .timer {
   float: left;
+  filter: var(--invert);
 }
