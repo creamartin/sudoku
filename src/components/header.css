@@ -16,6 +16,8 @@
     line-height: 50px;
     height: 50px;
     font-size: 30px;
+    margin-block-start: auto;
+    font-weight: normal;
 }.newgame-span{
     display: none;
     line-height: 50px;
